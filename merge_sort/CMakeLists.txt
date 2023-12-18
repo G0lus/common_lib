@@ -10,3 +10,5 @@ target_sources(
     INTERFACE merge_sort.h
     PRIVATE merge_sort.c
 )
+
+add_subdirectory(tests)
