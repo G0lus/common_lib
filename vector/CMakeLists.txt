@@ -5,3 +5,5 @@ add_library(vector
 
 target_sources(vector INTERFACE vector.c)
 target_sources(vector PUBLIC vector.h)
+
+add_subdirectory(tests)
