@@ -7,8 +7,8 @@ add_library(
 
 target_sources(
     merge_sort
-    INTERFACE merge_sort.h
-    PRIVATE merge_sort.c
+    PUBLIC merge_sort.h
+    INTERFACE merge_sort.c
 )
 
 add_subdirectory(tests)

@@ -7,8 +7,8 @@ add_library(
 
 target_sources(
     strings
-    INTERFACE strings.h
-    PRIVATE strings.c
+    PUBLIC strings.h
+    INTERFACE strings.c
 )
 
 add_subdirectory(tests)
