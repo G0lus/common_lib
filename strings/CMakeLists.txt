@@ -5,10 +5,7 @@ add_library(
     strings.h
 )
 
-target_sources(
-    strings
-    PUBLIC strings.h
-    INTERFACE strings.c
-)
+target_sources(strings PUBLIC strings.h)
+target_sources(strings INTERFACE strings.c)
 
 add_subdirectory(tests)

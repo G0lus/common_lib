@@ -5,10 +5,7 @@ add_library(
     merge_sort.h
 )
 
-target_sources(
-    merge_sort
-    PUBLIC merge_sort.h
-    INTERFACE merge_sort.c
-)
+target_sources(merge_sort PUBLIC merge_sort.h)
+target_sources(merge_sort INTERFACE merge_sort.c)
 
 add_subdirectory(tests)
