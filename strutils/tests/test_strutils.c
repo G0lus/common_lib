@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "strings.h"
+#include "strutils.h"
 
 size_t test_empty_line(void){
     const char* str = "";

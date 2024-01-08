@@ -1,4 +1,4 @@
-#include "strings.h"
+#include "strutils.h"
 
 /**
  * @brief Gets single line from src without newline ('\n') or zero ('\0') character .
@@ -15,6 +15,7 @@ size_t str_get_line(const char* restrict src, char* restrict dst, const size_t m
     size_t i;
     for(i = 0; i < max_len; i++){
         if(src[i] == '\n'){
+            i++;
             break;
         }else if(src[i] == '\0'){
             return i == 0 ? 0 : i;
