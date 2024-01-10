@@ -1,9 +1,19 @@
-add_executable(test_strutils test_strutils.c)
+add_executable(test_str_get_line test_str_get_line.c)
 
-target_include_directories(test_strutils PUBLIC ..)
-target_link_libraries(test_strutils PUBLIC strutils)
+target_include_directories(test_str_get_line PUBLIC ..)
+target_link_libraries(test_str_get_line PUBLIC strutils)
 
 add_test(
-    "Strings Testing"
-    test_strutils
+    "Testing str_get_line"
+    test_str_get_line
+)
+
+add_executable(test_str_erase_char test_str_erase_char.c)
+
+target_include_directories(test_str_erase_char PUBLIC ..)
+target_link_libraries(test_str_erase_char PUBLIC strutils)
+
+add_test(
+    "Testing str_erase_char"
+    test_str_erase_char
 )

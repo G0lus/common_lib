@@ -22,7 +22,7 @@ size_t test_line_with_one_char(void){
     return ret;
 }
 
-size_t test_line_with_one_newline(void){
+size_t test_line_with_one_erasing_char(void){
     const char* str = "\n";
     char line[256] = {0};
     size_t ret = str_get_line(str, &line[0], strlen(str));
@@ -42,7 +42,7 @@ int main(void)
 {
     assert(test_empty_line() == 0);
     assert(test_line_with_one_char() == 1);
-    assert(test_line_with_one_newline() == 0);
+    assert(test_line_with_one_erasing_char() == 0);
     assert(test_normal_line() == sizeof("test") - 1);
     return EXIT_SUCCESS;
 }
