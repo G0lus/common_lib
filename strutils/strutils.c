@@ -26,7 +26,9 @@ size_t str_get_line(const char* restrict src, char* restrict dst, const size_t m
 }
 
 /**
- * @brief Erases char from src and copies to dst.
+ * @brief Erases char from src and copies to dst. Safe to use the same ptr for input and output.
+ * Function uses temporary buffer.
+ * @warning Last copied data is '\\0'.
  * @warning dst must be of sufficient length to hold the data.
  * @param src starting string
  * @param dst pointer to copy to
@@ -38,15 +40,24 @@ size_t str_erase_char(const char* src, char* dst, const char ch, const size_t ma
     if(dst == NULL){
         return 0;
     }
-    size_t ret_val = 0;
+    
+    char tmp[max_len];
+    for(size_t i = 0; i < max_len; i++){
+        dst[i] = tmp[i];
+    }
+
+    size_t tmp_cnt = 0;
     for(size_t i = 0; i < max_len && src[i] != '\0'; i++){
         if (src[i] != ch)  // if source is not a char
         {
-            *dst = src[i];  // copy the char at source to destination
-            dst++;        // increment destination pointer
-            ret_val++;
+            tmp[tmp_cnt] = src[i];  // copy the char at source to destination
+            tmp_cnt++;        // increment destination pointer
         }
     }
-    *dst = '\0';
-    return ret_val;
+    tmp[tmp_cnt] = '\0';
+    for(size_t i = 0; i < tmp_cnt; i++){
+        dst[i] = tmp[i];
+    }
+
+    return tmp_cnt;
 }
