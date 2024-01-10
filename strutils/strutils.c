@@ -54,7 +54,7 @@ size_t str_erase_char(const char* src, char* dst, const char ch, const size_t ma
             tmp_cnt++;        // increment destination pointer
         }
     }
-    tmp[tmp_cnt] = '\0';
+    tmp[tmp_cnt++] = '\0';
     for(size_t i = 0; i < tmp_cnt; i++){
         dst[i] = tmp[i];
     }
