@@ -43,7 +43,7 @@ size_t str_erase_char(const char* src, char* dst, const char ch, const size_t ma
     
     char tmp[max_len];
     for(size_t i = 0; i < max_len; i++){
-        dst[i] = tmp[i];
+        tmp[i] = 0;
     }
 
     size_t tmp_cnt = 0;
